@@ -1,0 +1,25 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo:latest
+    restart: always
+    volumes:
+      - /Users/houchaoyue/docker-project/mongodb/db:/data/db
+      - /Users/houchaoyue/docker-project/mongodb/log:/var/log/mongodb
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+  admin-mongo:
+    image: fourfire/admin-mongo
+    restart: always
+    volumes:
+      - $PWD/admin-config:/home/admin-mongo/config/
+    ports:
+      - 8101:1234
+
+# default login config
+# "username":"admin",
+# "password":"admin1234"
+
