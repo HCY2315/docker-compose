@@ -4,8 +4,8 @@ services:
     image: mongo:latest
     restart: always
     volumes:
-      - /Users/houchaoyue/docker-project/mongodb/db:/data/db
-      - /Users/houchaoyue/docker-project/mongodb/log:/var/log/mongodb
+      - $PWD/db:/data/db
+      - $PWD/log:/var/log/mongodb
     ports:
       - 27017:27017
     environment:
