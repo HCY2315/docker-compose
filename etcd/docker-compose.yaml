@@ -9,7 +9,7 @@ services:
     environment:
       ETCDCTL_API: 3
     volumes:
-      - /Users/houchaoyue/docker-project/etcd/etcd-data:/etcd-data
+      - $PWD/etcd-data:/etcd-data
     command:
       - "/usr/local/bin/etcd"
       - "--name"
@@ -35,8 +35,8 @@ services:
     #build: .
     image: etcd-manager:v1
     volumes:
-      - ./bin/config/cfg.toml:/app/config/cfg.toml
-      - ./bin/logs:/app/logs
+      - $PWD/bin/config/cfg.toml:/app/config/cfg.toml
+      - &PWD/bin/logs:/app/logs
     ports:
       - "10280:10280"
     depends_on:
