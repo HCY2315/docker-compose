@@ -30,7 +30,7 @@ services:
       - "s1=http://0.0.0.0:2380"
       - "--initial-cluster-state"
       - "new"
-#etcd_v3版本使用
+# etcd_v3版本使用
   etcd-manage:
     #build: .
     image: etcd-manager:v1
@@ -41,7 +41,7 @@ services:
       - "10280:10280"
     depends_on:
       - etcd
-#etcd_v2版本使用
+# etcd_v2版本使用
 #  etcd-browser:
 #    image: buddho/etcd-browser
 #    container_name: etcd-browser
